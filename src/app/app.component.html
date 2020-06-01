@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="col-lg-12 mt-3 bg-green rounded-xl">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 text-center">
+        <img src="assets/images/projects.png" alt="logo">
+      </div>
+      <div class="col-lg-9 col-md-9 text-center">
+        <h3 class="mt-5">{{title}}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 pl-0 mt-3 even-child" *ngFor="let mock of mockData">
+        <img class="img" [src]="mock.img" [alt]="mock.name">
+        
+        <button class="position-absolute btn btn-success btn-size top-right pl-4 pr-4 rounded" *ngIf="mock.cost">Buy Now</button>
+        <span class="position-absolute top-left opacity p-2 font-weight-bold font-size-20 text-uppercase">{{ mock.name }}</span>
+        <span class="position-absolute top-right-1 opacity p-1 font-weight-bold" *ngIf="mock.cost">${{ mock.cost }} / ton</span>
+        
+        <div class="border p-2 bg-light shadow-sm">
+          <p class="text-danger font-weight-bold">
+            {{mock.title}}
+          </p>
+          <p class="text-success font-weight-bold">
+            {{mock.weight}} lbs. offset
+          </p>
+          <p class="text-justify">
+            {{mock.description}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
